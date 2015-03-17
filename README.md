@@ -5,7 +5,7 @@ Copyright (c) 2015 Open Communications Security. All rights reserved.
 
 The OpenCS Binary-to-Text library for C# (ocsbincodec-csharp) is a customizable
 library capable of encode and decode binary values to plain text using multiple
-standard and non-standard encodings schemes.
+standard and non-standard encodings schemes. It is a direct port of ocsbincodec-java (https://github.com/opencs/ocsbincodec-java).
 
 This library was designed to be as flexible as possible. This means that the
 implementations in this library will always favor flexibility first.
