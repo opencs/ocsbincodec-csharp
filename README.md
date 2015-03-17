@@ -1,4 +1,4 @@
-# OpenCS Binary-to-Text library for C#
+# OpenCS Binary-to-Text library for C##
 Copyright (c) 2015 Open Communications Security. All rights reserved.
 
 ## Introduction
