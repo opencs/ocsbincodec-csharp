@@ -35,6 +35,12 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="IAlphabet.cs" />
+    <Compile Include="ICodec.cs" />
+    <Compile Include="Random\RandomSource.cs" />
+    <Compile Include="Random\RandomAlphabetGenerator.cs" />
+    <Compile Include="ICharSequence.cs" />
+    <Compile Include="StringCharSequence.cs" />
+    <Compile Include="ArrayCharSequence.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>
@@ -46,4 +52,7 @@
       </Properties>
     </MonoDevelop>
   </ProjectExtensions>
+  <ItemGroup>
+    <Folder Include="Random\" />
+  </ItemGroup>
 </Project>
