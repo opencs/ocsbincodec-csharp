@@ -40,7 +40,6 @@ namespace OpenCS.BinCodec
 	/// </remarks>
 	public interface ICodec
 	{
-
 		/// <summary>
 		/// Returns the expected number of bytes based on the size of the encoded size.
 		/// </summary>
@@ -72,6 +71,14 @@ namespace OpenCS.BinCodec
 		/// <param name="src"> The encoded data.</param>
 		/// <returns>The decoded value.</returns>
 		/// <exception cref="System.ArgumentException">If src is invalid.</exception>
+		byte[] Decode(char [] src);
+
+		/// <summary>
+		/// Decodes the encoded data.
+		/// </summary>
+		/// <param name="src"> The encoded data.</param>
+		/// <returns>The decoded value.</returns>
+		/// <exception cref="System.ArgumentException">If src is invalid.</exception>
 		byte[] Decode(ICharSequence src);
 
 		/// <summary>
@@ -92,7 +99,47 @@ namespace OpenCS.BinCodec
 		/// <param name="srcSize">The number of characters in src.</param>
 		/// <returns>The decoded value.</returns>
 		/// <exception cref="System.ArgumentException">If src is invalid.</exception>
+		byte[] Decode(char [] src, int srcOffs, int srcSize);
+
+		/// <summary>
+		/// Decodes the encoded data.
+		/// </summary>
+		/// <param name="src">The encoded data.</param>
+		/// <param name="srcOffs">The initial offset in src.</param>
+		/// <param name="srcSize">The number of characters in src.</param>
+		/// <returns>The decoded value.</returns>
+		/// <exception cref="System.ArgumentException">If src is invalid.</exception>
 		byte[] Decode(ICharSequence src, int srcOffs, int srcSize);
+
+		/// <summary>
+		/// Decodes the encoded data and puts the result in dst.
+		/// </summary>
+		/// <remarks>
+		/// The array dst must be large enough to hold the decoded data.
+		/// </remarks>
+		/// <param name="src">The encoded data.</param>
+		/// <param name="srcOffs">The initial offset in src.</param>
+		/// <param name="srcSize">The number of characters in src.</param>
+		/// <param name="dst">The output buffer.</param>
+		/// <param name="dstOffs">The initial offset in the output buffer.</param>
+		/// <returns>The number of byes added to dst.</returns>
+		/// <exception cref="System.ArgumentException">If src is invalid.</exception>
+		int Decode(string src, int srcOffs, int srcSize, byte [] dst, int dstOffs);
+
+		/// <summary>
+		/// Decodes the encoded data and puts the result in dst.
+		/// </summary>
+		/// <remarks>
+		/// The array dst must be large enough to hold the decoded data.
+		/// </remarks>
+		/// <param name="src">The encoded data.</param>
+		/// <param name="srcOffs">The initial offset in src.</param>
+		/// <param name="srcSize">The number of characters in src.</param>
+		/// <param name="dst">The output buffer.</param>
+		/// <param name="dstOffs">The initial offset in the output buffer.</param>
+		/// <returns>The number of byes added to dst.</returns>
+		/// <exception cref="System.ArgumentException">If src is invalid.</exception>
+		int Decode(char [] src, int srcOffs, int srcSize, byte [] dst, int dstOffs);
 
 		/// <summary>
 		/// Decodes the encoded data and puts the result in dst.
@@ -123,7 +170,7 @@ namespace OpenCS.BinCodec
 		/// <param name="srcOffs">The offset of the data in src.</param>
 		/// <param name="srcSize">The number of bytes in src.</param>
 		/// <returns>The encoded data.</returns>
-		string encode(byte [] src, int srcOffs, int srcSize);
+		string Encode(byte [] src, int srcOffs, int srcSize);
 
 		/// <summary>
 		/// Encode the given data.
@@ -133,7 +180,7 @@ namespace OpenCS.BinCodec
 		/// <param name="srcSize">The number of bytes in src.</param>
 		/// <param name="dst">The destination of the encoded data.</param>
 		/// <returns>The encoded data.</returns>
-		int encode(byte [] src, int srcOffs, int srcSize, StringBuilder dst);
+		int Encode(byte [] src, int srcOffs, int srcSize, StringBuilder dst);
 	}
 }
 

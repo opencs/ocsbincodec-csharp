@@ -41,6 +41,13 @@
     <Compile Include="ICharSequence.cs" />
     <Compile Include="StringCharSequence.cs" />
     <Compile Include="ArrayCharSequence.cs" />
+    <Compile Include="ArrayAlphabet.cs" />
+    <Compile Include="Base32Alphabet.cs" />
+    <Compile Include="Base64Alphabet.cs" />
+    <Compile Include="BinaryAlphabet.cs" />
+    <Compile Include="HexadecimalAlphabet.cs" />
+    <Compile Include="AbstractCodec.cs" />
+    <Compile Include="Base2NCodec.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>
