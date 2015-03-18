@@ -27,12 +27,25 @@
 // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 using System;
+using System.Reflection;
 using NUnit.Framework;
 
 namespace OpenCS.BinCodec
 {
 	public class BaseAlphabetTest
 	{
+
+		public static Object GetFieldValue(object instance, String name)
+		{
+			Type t = instance.GetType();
+
+			FieldInfo f = t.GetField(name, BindingFlags.Instance 
+			                             | BindingFlags.NonPublic 
+			                             | BindingFlags.Public );
+			return f.GetValue( instance );
+		}
+
+
 		protected virtual void TestGetCharacterCore(IAlphabet a, string characters) {
 
 			for (int i = 0; i < characters.Length; i++) {

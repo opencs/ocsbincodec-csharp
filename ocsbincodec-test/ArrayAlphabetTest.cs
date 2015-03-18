@@ -38,38 +38,19 @@ namespace OpenCS.BinCodec
 		private const string CHARACTERS = "abcdefghij";
 		private static readonly char [] CHARACTERS_ARRAY = CHARACTERS.ToCharArray();
 
-		class ArrayAlphabetEx : ArrayAlphabet {
-
-			public ArrayAlphabetEx(string alphabet): base(alphabet) 
-			{
-			}
-
-			public ArrayAlphabetEx(char [] alphabet): base(alphabet) 
-			{
-			}
-
-			public char [] Alphabet 
-			{
-				get 
-				{
-					return this.alphabet;
-				}
-			}
-		}
-
 		[Test]
 		public void TestArrayAlphabetString() {
-			ArrayAlphabetEx b = new ArrayAlphabetEx(CHARACTERS);
+			ArrayAlphabet b = new ArrayAlphabet(CHARACTERS);
 
-			Assert.AreEqual(CHARACTERS_ARRAY, b.Alphabet);
+			Assert.AreEqual(CHARACTERS_ARRAY, GetFieldValue(b, "alphabet"));
 		}
 
 		[Test]
 		public void TestArrayAlphabetCharArray() {
-			ArrayAlphabetEx b = new ArrayAlphabetEx(CHARACTERS_ARRAY);
+			ArrayAlphabet b = new ArrayAlphabet(CHARACTERS_ARRAY);
 
-			Assert.AreNotSame(CHARACTERS_ARRAY, b.Alphabet);
-			Assert.AreEqual(CHARACTERS_ARRAY, b.Alphabet);
+			Assert.AreNotSame(CHARACTERS_ARRAY,GetFieldValue(b, "alphabet"));
+			Assert.AreEqual(CHARACTERS_ARRAY, GetFieldValue(b, "alphabet"));
 		}
 
 		[Test]
