@@ -44,6 +44,8 @@
     <Compile Include="Random\RandomAlphabetGeneratorTest.cs" />
     <Compile Include="StringCharSequenceTest.cs" />
     <Compile Include="ArrayCharSequenceTest.cs" />
+    <Compile Include="BaseAlphabetTest.cs" />
+    <Compile Include="ArrayAlphabetTest.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
