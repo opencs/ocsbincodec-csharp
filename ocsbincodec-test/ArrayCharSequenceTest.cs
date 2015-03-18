@@ -26,51 +26,46 @@
 // OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //
+using NUnit.Framework;
 using System;
 
 namespace OpenCS.BinCodec
 {
-	/// <summary>
-	/// This class implements a ICharSequence that uses a char array as 
-	/// its source.
-	/// </summary>
-	public class ArrayCharSequence: ICharSequence
+	[TestFixture()]
+	public class ArrayCharSequenceTest
 	{
-		/// <summary>
-		/// Returns the source char array.
-		/// </summary>
-		/// <value>The source array.</value>
-		public char[] Source 
+		private static readonly char [] SAMPLE = "This is just a test.".ToCharArray();
+
+		[Test()]
+		public void TestArrayCharSequence ()
 		{
-			get;
-			private set;
+			ArrayCharSequence s;
+
+			s = new ArrayCharSequence(SAMPLE);
+			Assert.AreSame(SAMPLE, s.Source);
 		}
 
-		/// <summary>
-		/// Creates a new instance of this class.
-		/// </summary>
-		/// <remarks>
-		/// The source array is used directly. This means that 
-		/// changes in the source array will affect this instance
-		/// as well.
-		/// </remarks>
-		/// <param name="source">The source char array.</param>
-		public ArrayCharSequence (char [] source)
+		[Test()]
+		public void TestLength ()
 		{
-			this.Source = source;
+			ArrayCharSequence s;
+
+			s = new ArrayCharSequence(SAMPLE);
+			Assert.AreEqual(SAMPLE.Length, s.Length);
 		}
 
-		public int Length
+		[Test()]
+		public void TestCharAt ()
 		{
-			get 
+			ArrayCharSequence s;
+
+			s = new ArrayCharSequence(SAMPLE);
+
+			for (int i = 0; i < s.Length; i++) 
 			{
-				return this.Source.Length;
+				Assert.AreEqual(SAMPLE[i], s.CharAt(i));
 			}
-		}
-
-		public int CharAt(int idx) 
-		{
-			return this.Source[idx];
 		}
 	}
 }
+

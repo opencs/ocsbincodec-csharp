@@ -43,6 +43,7 @@
     <Compile Include="Random\IntegerFileReaderTest.cs" />
     <Compile Include="Random\RandomAlphabetGeneratorTest.cs" />
     <Compile Include="StringCharSequenceTest.cs" />
+    <Compile Include="ArrayCharSequenceTest.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
