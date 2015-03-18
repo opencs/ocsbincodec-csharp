@@ -49,6 +49,7 @@
     <Compile Include="Base32AlphabetTest.cs" />
     <Compile Include="Base64AlphabetTest.cs" />
     <Compile Include="BinaryAlphabetTest.cs" />
+    <Compile Include="HexadecimalAlphabetTest.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
