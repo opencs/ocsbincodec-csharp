@@ -30,26 +30,44 @@ using System;
 
 namespace OpenCS.BinCodec
 {
+
+	/// <summary>
+	/// This class implements a ICharSequence that uses a string as 
+	/// its source.
+	/// </summary>
 	public class StringCharSequence: ICharSequence
 	{
-		private string src;
 
-		public StringCharSequence (string src)
+		/// <summary>
+		/// Returns the source string.
+		/// </summary>
+		/// <value>The source string.</value>
+		public string Source 
 		{
-			this.src = src;
+			get;
+			private set;
+		}
+
+		/// <summary>
+		/// Creates a new instance of this class.
+		/// </summary>
+		/// <param name="source">The source string.</param>
+		public StringCharSequence (string source)
+		{
+			this.Source = source;
 		}
 
 		public int Length
 		{
 			get 
 			{
-				return src.Length;
+				return this.Source.Length;
 			}
 		}
 
 		public int CharAt(int idx) 
 		{
-			return src[idx];
+			return this.Source[idx];
 		}
 	}
 }
