@@ -36,6 +36,15 @@ namespace OpenCS.BinCodec
 	{
 		protected System.Random random = new System.Random();
 
+		protected static T[] CopyOfRange<T>(T [] src,  int offs, int size)
+		{
+			T [] dst;
+
+			dst = new T[size];
+			Array.Copy(src, offs, dst, 0, size);
+			return dst;
+		}
+
 		protected void TestEncodeDecodeCore(ICodec c) {
 
 			for (int size = 1; size <= 1024; size++) {
