@@ -148,6 +148,14 @@ namespace OpenCS.BinCodec
 			}
 		}
 
+		/// <summary>
+		/// Verifies if the given character is a padding character.
+		/// </summary>
+		/// <remarks>
+		/// If the padding is disable, this method will always return false.
+		/// </remarks>
+		/// <returns>true if c is the padding character or false otherwise.</returns>
+		/// <param name="c">The character to be tested.</param>
 		public bool IsPadding(int c) {
 
 			if (UsesPadding) {
@@ -160,6 +168,9 @@ namespace OpenCS.BinCodec
 		/// <summary>
 		/// Verifies if c is inside the ignored list.
 		/// </summary>
+		/// <remarks>
+		/// This method always return false if the ignore list is disabled.
+		/// </remarks>
 		/// <returns>true if c must be ignored or false otherwise.</returns>
 		/// <param name="c">The character to be verified.</param>
 		public bool IsIgnored(int c) {
