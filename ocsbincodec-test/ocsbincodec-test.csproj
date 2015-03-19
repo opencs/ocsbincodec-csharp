@@ -53,6 +53,7 @@
     <Compile Include="BaseCodecTest.cs" />
     <Compile Include="AbstractCodecTest.cs" />
     <Compile Include="TestCodec.cs" />
+    <Compile Include="Base2NCodecTest.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
