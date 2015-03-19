@@ -121,7 +121,7 @@ namespace OpenCS.BinCodec
 		/// </summary>
 		/// <returns>The size of the padding. It is always zero if the padding is not used.</returns>
 		/// <param name="totalSize">The total size of the output.</param>
-		protected int GetPaddingSize(int totalSize) {
+		public int GetPaddingSize(int totalSize) {
 
 			if (this.UsesPadding) {
 				return (this.paddingBLockSize - (totalSize % this.paddingBLockSize)) % this.paddingBLockSize;
@@ -148,7 +148,7 @@ namespace OpenCS.BinCodec
 			}
 		}
 
-		protected bool IsPadding(int c) {
+		public bool IsPadding(int c) {
 
 			if (UsesPadding) {
 				return (c == this.paddingChar);
@@ -162,7 +162,7 @@ namespace OpenCS.BinCodec
 		/// </summary>
 		/// <returns>true if c must be ignored or false otherwise.</returns>
 		/// <param name="c">The character to be verified.</param>
-		protected bool IsIgnored(int c) {
+		public bool IsIgnored(int c) {
 
 			for (int i = 0; i < this.ignored.Length; i++) {
 				if (c == this.ignored[i]) {
