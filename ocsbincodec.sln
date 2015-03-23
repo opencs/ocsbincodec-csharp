@@ -21,6 +21,6 @@ Global
 		{E0386EB9-616A-4D93-99D2-36B3D7C8DC9E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = ocsbincodec\ocsbincodec.csproj
+		StartupItem = ocsbincodec-test\ocsbincodec-test.csproj
 	EndGlobalSection
 EndGlobal

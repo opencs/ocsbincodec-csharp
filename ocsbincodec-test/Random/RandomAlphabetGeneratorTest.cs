@@ -37,6 +37,9 @@ namespace OpenCS.BinCodec.Random
 	{
 
 		private const string CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+		
+		// Shuffle of CHARS with seed as 12345 and 100 rounds
+		private const string SHUFFLE_STANDARD = "MBYXGZEJKRSNOLCFQTUDIHAVWP";
 
 		[Test]
 		public void TestGenerateRandom() {
@@ -95,6 +98,25 @@ namespace OpenCS.BinCodec.Random
 			RandomAlphabetGenerator.Shuffle(0, 4, dst);
 			RandomAlphabetGenerator.Shuffle(0, 4, dst2);
 			Assert.AreEqual(dst, dst2);
+		}
+
+		[Test]
+		public void TestShuffleStandard() {
+			int count;
+			char [] src;
+			char [] dst; 
+
+			// Initialize the source
+			src = CHARS.ToCharArray();
+
+			// No shuffle at all
+			dst = (char[])src.Clone();
+			RandomAlphabetGenerator.Shuffle(0, 0, dst);
+			Assert.AreEqual(src, dst);
+
+			dst = (char[])src.Clone();
+			RandomAlphabetGenerator.Shuffle(12345, 100, dst);
+			Assert.AreEqual(SHUFFLE_STANDARD.ToCharArray(), dst);
 		}
 	}
 }
