@@ -105,7 +105,7 @@ namespace OpenCS.BinCodec
 					return 5;
 				case 64:
 					return 6;
-				case 126:
+				case 128:
 					return 7;
 				default:
 					throw new ArgumentException("Invalid alphabet.");
